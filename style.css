@@ -1,0 +1,1726 @@
+/* =====================================================
+   ALOJA GROUP - RESTRUCTURED LANDING
+   Black & White Only - Professional High-End
+   ===================================================== */
+
+/* =====================================================
+   FONTS - NUTMEG
+   ===================================================== */
+
+@font-face {
+    font-family: 'Nutmeg';
+    src: url('assets/fonts/Nutmeg-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nutmeg';
+    src: url('assets/fonts/Nutmeg-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nutmeg';
+    src: url('assets/fonts/Nutmeg-Book.ttf') format('truetype');
+    font-weight: 450;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nutmeg';
+    src: url('assets/fonts/Nutmeg-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nutmeg';
+    src: url('assets/fonts/Nutmeg-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nutmeg';
+    src: url('assets/fonts/Nutmeg-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =====================================================
+   RESET & BASE
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Nutmeg', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: inherit;
+    background: #000000;
+    color: #000000;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+    font-family: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =====================================================
+   SECTION 1: HERO - DARK WITH CLOUD EFFECT
+   ===================================================== */
+
+.hero-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(
+        ellipse at center,
+        #0f1114 0%,
+        #080a0e 55%,
+        #050608 100%
+    );
+    z-index: 1;
+    overflow: hidden;
+    transition: background-color 0.8s ease;
+}
+
+/* HERO ENTRY */
+html.js-ready .hero-section {
+    animation: heroIntro 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroIntro {
+    0% {
+        opacity: 0;
+        filter: blur(20px);
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+
+.hero-light-thread {
+    position: absolute;
+    inset: -60%;
+    background: linear-gradient(
+        110deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.04) 46%,
+        rgba(255, 255, 255, 0.14) 50%,
+        rgba(255, 255, 255, 0.04) 54%,
+        transparent 60%
+    );
+    filter: blur(140px);
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    animation: lightThreadMove 26s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+@keyframes lightThreadMove {
+    0% {
+        transform: translateX(-30%) translateY(10%);
+        opacity: 0.18;
+    }
+    50% {
+        transform: translateX(30%) translateY(-10%);
+        opacity: 0.38;
+    }
+    100% {
+        transform: translateX(-30%) translateY(10%);
+        opacity: 0.18;
+    }
+}
+
+
+
+
+/* Hero background transition to white */
+.hero-section.transition-to-white {
+    background: #ffffff;
+}
+
+/* Cloud/Movement Background */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    will-change: transform, opacity;
+}
+
+
+.cloud-layer {
+    position: absolute;
+    inset: -70%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(180, 190, 210, 0.08) 0%,
+        rgba(120, 130, 150, 0.04) 40%,
+        rgba(80, 90, 110, 0.02) 60%,
+        transparent 80%
+    );
+    opacity: 0.9;
+    filter: blur(80px);
+    animation: cloudDrift 15s ease-in-out infinite;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+
+
+
+
+/* Capas individuales */
+.cloud-1 {
+    top: -35%;
+    left: -25%;
+    animation-duration: 55s;
+    opacity: 0.9;
+}
+
+.cloud-2 {
+    top: 5%;
+    right: -40%;
+    animation-duration: 34s;
+    opacity: 0.85;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(20, 25, 35, 0.55) 0%,
+        rgba(15, 18, 25, 0.35) 35%,
+        rgba(10, 12, 18, 0.20) 55%,
+        transparent 75%
+    );
+    filter: blur(120px);
+    mix-blend-mode: multiply;
+}
+
+
+
+
+.cloud-3 {
+    bottom: -30%;
+    left: 15%;
+    animation-duration: 95s;
+    opacity: 0.4;
+}
+
+
+@keyframes cloudDrift {
+    0% {
+        transform: translate(-10%, -6%) scale(1.15);
+    }
+    50% {
+        transform: translate(10%, 6%) scale(1.35);
+    }
+    100% {
+        transform: translate(-10%, -6%) scale(1.15);
+    }
+}
+
+
+
+/* Logo Stage */
+.logo-stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.logo-container {
+   
+    position: relative;
+    width: min(80vw, 1000px);
+    aspect-ratio: 3 / 1;
+    overflow: hidden;
+    isolation: isolate;
+
+    transform: translateY(-3%);
+
+    background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
+
+    -webkit-mask-image: url("assets/svg/logo-mask.svg");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+
+    mask-image: url("assets/svg/logo-mask.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+
+    will-change: transform, filter, opacity;
+}
+
+html.js-ready .logo-container {
+    animation: logoBreath 6s ease-in-out infinite;
+}
+
+@keyframes logoBreath {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.015);
+    }
+}
+
+
+.logo-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* iOS video stability */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+
+/* Hero Scroll Hint */
+.hero-scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 20;
+    opacity: 0.6;
+    transition: opacity 0.4s ease;
+}
+
+.hero-scroll-hint .scroll-text {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.scroll-arrow {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
+    position: relative;
+}
+
+.scroll-arrow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #ffffff;
+    animation: scrollArrowPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollArrowPulse {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+}
+
+/* =====================================================
+   CONTENT WRAPPER - Starts after fixed hero
+   ===================================================== */
+
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+    margin-top: 100vh;
+    background: #ffffff;
+}
+
+/* =====================================================
+   SECTION 2: HEADLINE - BRAND CLAIM
+   ===================================================== */
+
+.headline-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    padding: 120px 60px;
+}
+
+.headline-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.main-headline {
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+
+
+/* Headline typing lines - layout safe */
+.headline-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    will-change: opacity, transform;
+    transition:
+        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: normal;
+    overflow: hidden;
+    line-height: 1.15;
+}
+
+.main-headline,
+.headline-line {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+
+.headline-line::before {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    color: rgba(0,0,0,0.15);
+    transform: translateY(6px);
+    filter: blur(12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.headline-line.visible::before {
+    opacity: 1;
+}
+
+
+.headline-line.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+
+
+html.js-ready .headline-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Highlight Animation for "alojando marcas" */
+.underline-text {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.1em;
+}
+
+.underline-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.08);
+    z-index: -1;
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.underline-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0.05em;
+    width: 0;
+    height: 4px;
+    background: #000000;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.underline-text.active::before {
+    width: 100%;
+}
+
+.underline-text.active::after {
+    width: 100%;
+}
+
+/* Typing Cursor Effect */
+.headline-line.typing::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 4px;
+    animation: typingBlink 0.8s infinite;
+    color: #000000;
+}
+
+@keyframes typingBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* =====================================================
+   ARCHITECTURAL LINE DIVIDERS
+   ===================================================== */
+
+.section-divider {
+    position: relative;
+    padding: 0 60px;
+    background: #ffffff;
+}
+
+.divider-line {
+    width: 100%;
+    height: 1px;
+    background: #000000;
+}
+
+/* Divider animation when JS is ready */
+html.js-ready .divider-line {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-ready .divider-line.visible {
+    transform: scaleX(1);
+}
+
+.section-divider--tight-bottom {
+    margin-bottom: 15px;
+}
+
+.section-divider--tight-top {
+    margin-top: 15px;
+}
+
+
+
+/* =====================================================
+   SECTION 3: BRANDS – EXPERIENCE & AGENCY (FINAL PRO)
+   ===================================================== */
+
+.brands-section {
+    position: relative;
+    background: #ffffff;
+    padding: 120px 60px;
+    overflow: hidden;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+/* ===============================
+   BRAND CARD
+   =============================== */
+   
+   /* ===============================
+   BRAND SURFACE – NEXT GEN CONTAINER
+   =============================== */
+
+.brand-surface {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 56px 48px;
+
+    background: #ffffff;
+    border-radius: 24px;
+
+    /* separación del fondo */
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.04);
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition:
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.brand-card:hover .brand-surface,
+.brand-card:focus-within .brand-surface {
+    transform: translateY(-10px) scale(1.01);
+
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.12),
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    border-color: rgba(0, 0, 0, 0.18);
+}
+
+.brand-surface::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: radial-gradient(
+        120% 120% at 50% 0%,
+        rgba(0, 0, 0, 0.06),
+        transparent 60%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.brand-card:hover .brand-surface::before,
+.brand-card:focus-within .brand-surface::before {
+    opacity: 1;
+}
+
+
+.brand-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+    height: 100%;
+}
+
+html.js-ready .brand-card {
+    opacity: 0;
+    transform: translateY(60px) scale(0.96);
+    transition:
+        opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-ready .brand-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ===============================
+   CLAIM
+   =============================== */
+
+.brand-claim {
+    display: block;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+/* ===============================
+   LINK
+   =============================== */
+
+.brand-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    flex: 1;
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-link:hover {
+    transform: none;
+}
+
+/* ===============================
+   LOGO WRAPPER (STABILITY)
+   =============================== */
+
+.brand-logo-wrap {
+    overflow: hidden;
+    display: inline-block;
+}
+
+/* ===============================
+   LOGO – VECTOR ASSEMBLY REVEAL
+   =============================== */
+
+.brand-logo {
+    max-width: min(500px, 100%);
+    height: auto;
+
+    opacity: 0;
+    will-change: transform, opacity;
+
+    /* Mask sweep (solo durante entrada) */
+    -webkit-mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 35%,
+        black 65%,
+        transparent 100%
+    );
+    -webkit-mask-size: 200% 100%;
+    -webkit-mask-position: 100% 0;
+
+    mask-image: linear-gradient(
+        90deg,
+        transparent 0%,
+        black 35%,
+        black 65%,
+        transparent 100%
+    );
+    mask-size: 200% 100%;
+    mask-position: 100% 0;
+
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Estado visible → anima TODO */
+html.js-ready .brand-card.visible .brand-logo {
+    opacity: 1;
+
+    -webkit-mask-position: 0% 0;
+    mask-position: 0% 0;
+
+    animation: logoOvershoot 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+    /* elimina velo blanco */
+    -webkit-mask-image: none;
+    mask-image: none;
+}
+
+/* Animación real (no fade genérico) */
+@keyframes logoOvershoot {
+    0% {
+        transform: translateY(28px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(-4px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Diferenciación sutil entre marcas */
+.brand-card[data-brand="experience"] .brand-logo {
+    animation-delay: 0.05s;
+}
+
+.brand-card[data-brand="agency"] .brand-logo {
+    animation-delay: 0.15s;
+}
+
+/* ===============================
+   CTA – APARECE DESPUÉS DEL LOGO
+   =============================== */
+
+.brand-cta {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-ready .brand-card.visible .brand-cta {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.25s;
+}
+
+/* CTA visual */
+.brand-cta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border: 1px solid #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #000000;
+    transform: translateX(-101%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-link:hover .brand-cta::before {
+    transform: translateX(0);
+}
+
+.cta-text {
+    position: relative;
+    z-index: 1;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.brand-link:hover .cta-text {
+    color: #ffffff;
+}
+
+.cta-arrow {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+.brand-link:hover .cta-arrow {
+    stroke: #ffffff;
+    transform: translate(3px, -3px);
+}
+
+/* ===============================
+   VERTICAL DIVIDER
+   =============================== */
+
+.divider-vertical {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 0, 0, 0.3),
+        transparent
+    );
+}
+
+html.js-ready .divider-vertical {
+    transform: scaleY(0);
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-ready .divider-vertical.visible {
+    transform: scaleY(1);
+}
+
+/* ===============================
+   SAFETY FALLBACK (ANTI-BUG)
+   =============================== */
+
+html:not(.js-ready) .brand-logo {
+    opacity: 1;
+    -webkit-mask-image: none;
+    mask-image: none;
+    transform: none;
+}
+
+
+
+/* =====================================================
+   SECTION 4: MANIFESTO
+   ===================================================== */
+
+.manifesto-section {
+    position: relative;
+    background: #000000;
+    padding: 120px 60px;
+}
+
+.manifesto-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.manifesto-block {
+    opacity: 0;
+    transform: translateY(80px) rotateX(6deg);
+    transform-origin: top center;
+    transition:
+        opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.manifesto-block.visible {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+}
+
+
+
+
+/* SVG Number with Outline Stroke Animation */
+.block-number-container {
+    position: relative;
+    width: 120px;
+    height: 160px;
+}
+
+.number-svg {
+    width: 100%;
+    height: 100%;
+   
+}
+
+.number-outline {
+    fill: none;
+    stroke: #000;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* Animate stroke on visible */
+html.js-ready .manifesto-block.visible .number-outline {
+    stroke-dashoffset: 0;
+}
+
+/* Manifesto content block */
+.block-content {
+    transform: translateY(20px);
+    opacity: 0;
+    transition:
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.manifesto-block.visible .block-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.block-content p {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    line-height: 1.8;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* Manifesto typing text */
+.manifesto-text {
+    opacity: 0;
+    white-space: normal;
+    transition: opacity 0.25s ease;
+}
+
+html:not(.js-ready) .manifesto-text {
+    opacity: 0;
+}
+
+.block-content strong {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.text-highlight {
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(to bottom, transparent 60%, rgba(255, 255, 255, 0.15) 60%);
+    padding: 0 4px;
+    margin: 0 -4px;
+}
+
+/* =====================================================
+   SECTION 5: FOUNDERS
+   ===================================================== */
+
+.founders-section {
+    position: relative;
+    background: #ffffff;
+    padding: 120px 60px;
+    overflow: hidden;
+}
+
+.founders-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.founder-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+}
+
+/* Founders animation when JS is ready */
+html.js-ready .founder-card.founder-left {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.95);
+
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-ready .founder-card.founder-right {
+    opacity: 0;
+    transform: translateX(120px) scale(0.95);
+
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.js-ready .founder-card.visible {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* Founder Image - Large, B&W */
+.founder-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 40px;
+    position: relative;
+    background: linear-gradient(135deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02));
+    padding: 4px;
+}
+
+.founder-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.founder-card:hover .founder-image img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Founder Info */
+.founder-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.founder-role {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.founder-role strong {
+    font-weight: 700;
+    color: #000000;
+}
+
+.founder-name {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.02em;
+}
+
+/* LinkedIn Button - Emphasized */
+.founder-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    margin-top: 20px;
+    border: 2px solid #000000;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.founder-linkedin svg {
+    transition: transform 0.4s ease;
+}
+
+.founder-linkedin span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.founder-linkedin:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+.founder-linkedin:hover svg {
+    transform: scale(1.1);
+}
+
+/* =====================================================
+   SECTION 6: FOOTER - DARK WITH PARALLAX
+   ===================================================== */
+
+.site-footer {
+    animation: footerFadeIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes footerFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.site-footer {
+    position: relative;
+    background: #000000;
+    color: #ffffff;
+    padding: 0;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Parallax Transition Overlay */
+.footer-transition {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, #000000);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 60px 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer column order inversion */
+.footer-social {
+    order: 2;
+}
+
+.footer-info {
+    order: 1;
+}
+
+
+/* Left Column - Social */
+.footer-social {
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.social-link svg {
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: #ffffff;
+}
+
+.social-link:hover svg {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.footer-email {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-email::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: #ffffff;
+    transition: width 0.4s ease;
+}
+
+.footer-email:hover::after {
+    width: 100%;
+}
+
+/* Right Column - Info */
+.footer-info {
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 30px;
+    text-align: right;
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.footer-address {
+    font-size: 0.95rem;
+    font-style: normal;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 30px 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.05em;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1024px) {
+
+    /* ===============================
+       BRANDS – TABLET STRUCTURE
+       =============================== */
+
+    .brands-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .brand-surface {
+        padding: 72px 64px;   /* antes 56px 48px */
+    }
+
+
+    .brand-card {
+        padding: 32px 28px;
+    }
+    
+    .brand-logo {
+        max-width: 520px;   /* +30% real */
+        max-height: 130px;
+    }
+
+    .brands-divider {
+        display: flex;
+        justify-content: center;
+        padding: 16px 0;
+    }
+
+    .divider-vertical {
+        width: 120px;
+        height: 1px;
+        background: linear-gradient(
+            to right,
+            transparent,
+            rgba(0, 0, 0, 0.35),
+            transparent
+        );
+    }
+
+    /* ===============================
+       MANIFESTO – TABLET BALANCE
+       =============================== */
+
+    .manifesto-block {
+        grid-template-columns: 100px 1fr;
+        gap: 40px;
+    }
+
+    .block-number-container {
+        width: 80px;
+        height: 120px;
+    }
+
+    .number-outline {
+        font-size: 70px;
+    }
+
+    /* ===============================
+       FOUNDERS – TABLET EDITORIAL
+       =============================== */
+
+    .founders-container {
+        gap: 56px;
+    }
+
+    .founder-card {
+        padding: 40px 30px;
+    }
+
+    .founder-image {
+        width: 220px;
+        height: 220px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    /* ===============================
+       GLOBAL SECTION SPACING (MOBILE)
+       =============================== */
+
+    .headline-section,
+    .brands-section,
+    .manifesto-section,
+    .founders-section {
+        padding: 80px 30px;
+    }
+
+    .section-divider {
+        padding: 0 30px;
+    }
+
+    /* ===============================
+       HERO – OPTICAL CENTER FIX
+       =============================== */
+
+    .logo-stage {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-container {
+        width: min(90vw, 500px);
+        transform: translateY(-10%);
+    }
+
+    /* ===============================
+       HEADLINE – TRUE VERTICAL CENTER
+       =============================== */
+
+    .headline-section {
+        min-height: 100vh;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .headline-container {
+        text-align: center;
+    }
+
+    .main-headline {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    .headline-line {
+        line-height: 1.2;
+    }
+
+    /* ===============================
+       BRANDS – CLEAN MOBILE LAYOUT
+       =============================== */
+
+     .brand-surface {
+            padding: 36px 24px;
+            border-radius: 20px;
+        }
+
+
+    .brands-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .brand-card {
+        padding: 24px 20px;
+    }
+
+    .brand-logo {
+        max-width: 280px;
+    }
+
+    .brands-divider {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .divider-vertical {
+        width: 140px;
+        height: 1px;
+        background: linear-gradient(
+            to right,
+            transparent,
+            rgba(0, 0, 0, 0.35),
+            transparent
+        );
+    }
+
+    /* ===============================
+       MANIFESTO – SAFE STACKING
+       =============================== */
+
+    .manifesto-block {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .block-number-container {
+        width: 60px;
+        height: 80px;
+    }
+
+    .number-outline {
+        font-size: 50px;
+    }
+
+    .manifesto-container {
+        gap: 80px;
+    }
+
+    /* ===============================
+       FOUNDERS – EDITORIAL SPACING
+       =============================== */
+
+    .founders-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .founder-card {
+        padding: 30px 20px;
+    }
+
+    .founder-left,
+    .founder-right {
+        transform: translateY(60px);
+    }
+
+    .founder-left.visible,
+    .founder-right.visible {
+        transform: translateY(0);
+    }
+
+    .founder-image {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 24px;
+    }
+
+    /* ===============================
+       FOOTER – MOBILE CENTERED
+       =============================== */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        padding: 80px 30px 60px;
+    }
+
+    .footer-info {
+        align-items: center;
+        text-align: center;
+        order: 1;
+    }
+
+    .footer-social {
+        align-items: center;
+        text-align: center;
+        order: 2;
+    }
+
+    .social-links {
+        align-items: center;
+    }
+
+    .footer-email {
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 160px;
+    }
+
+    .footer-bottom {
+        padding: 30px 30px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    /* ===============================
+       GLOBAL SECTION SPACING
+       =============================== */
+
+    .headline-section,
+    .brands-section,
+    .manifesto-section,
+    .founders-section {
+        padding: 60px 20px;
+    }
+
+    .section-divider {
+        padding: 0 20px;
+    }
+
+    /* ===============================
+       HERO – MICRO OPTICAL FIX
+       =============================== */
+
+    .logo-container {
+        width: min(92vw, 420px);
+        transform: translateY(-5%);
+    }
+
+    /* ===============================
+       HEADLINE – COMPACT & CENTERED
+       =============================== */
+
+    .headline-section {
+        padding: 0 20px;
+    }
+
+    .main-headline {
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
+        line-height: 1.15;
+    }
+
+    .headline-line {
+        line-height: 1.15;
+    }
+
+    .underline-text::after {
+        height: 3px;
+    }
+
+    /* ===============================
+       BRANDS – TIGHT & CLEAN
+       =============================== */
+
+    .brand-surface {
+            padding: 28px 20px;
+            border-radius: 18px;
+        }
+
+
+    .brands-grid {
+        gap: 32px;
+    }
+
+    .brand-card {
+        padding: 20px 16px;
+    }
+
+    .brand-logo {
+        max-width: 220px;
+    }
+
+    .brand-cta {
+        padding: 12px 20px;
+    }
+
+    /* ===============================
+       MANIFESTO – READABILITY FIRST
+       =============================== */
+
+    .block-content p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    /* ===============================
+       FOUNDERS – MOBILE EDITORIAL
+       =============================== */
+
+    .founders-container {
+        gap: 40px;
+    }
+
+    .founder-card {
+        padding: 24px 16px;
+    }
+
+    .founder-image {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 24px;
+    }
+
+    .founder-name {
+        font-size: 1.8rem;
+    }
+
+    .founder-linkedin {
+        padding: 12px 20px;
+    }
+
+    /* ===============================
+       FOOTER – FINAL STACK
+       =============================== */
+
+    .footer-container {
+        gap: 48px;
+        padding: 60px 20px 40px;
+    }
+
+    .footer-logo {
+        width: 140px;
+    }
+
+    .footer-address {
+        font-size: 0.85rem;
+    }
+
+    .footer-bottom {
+        padding: 24px 20px;
+    }
+
+}
+
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .manifesto-text {
+        transition: none !important;
+    }
+}
+
+html:not(.js-ready) .manifesto-text {
+    visibility: hidden;
+}
+
+/* Manifesto divider override for dark background */
+.manifesto-section .divider-line {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Safari / fallback */
+html:not(.js-ready) .manifesto-text {
+    color: #ffffff;
+}
