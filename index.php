@@ -203,7 +203,7 @@
                              class="brand-logo brand-logo--default"
                              loading="lazy" />
                         <div class="brand-logo-hover-overlay" aria-hidden="true">
-                            <img src="assets/img/logo-aloja-agency.png"
+                            <img src="assets/img/logo-aloja-agency2.png"
                                  alt=""
                                  class="brand-logo"
                                  loading="lazy" />
@@ -249,7 +249,7 @@
                              class="brand-logo brand-logo--default"
                              loading="lazy" />
                         <div class="brand-logo-hover-overlay" aria-hidden="true">
-                            <img src="assets/img/logo-aloja-experience.png"
+                            <img src="assets/img/logo-aloja-experience2.png"
                                  alt=""
                                  class="brand-logo"
                                  loading="lazy" />
