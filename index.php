@@ -95,7 +95,6 @@
             .brand-logo--default {
                 opacity: 1 !important;
                 transform: none !important;
-                filter: brightness(0) invert(1) !important;
             }
             .brand-logo-hover-overlay {
                 display: none !important;
