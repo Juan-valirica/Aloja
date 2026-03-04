@@ -1084,6 +1084,14 @@ html:not(.js-ready) .manifesto-text {
     animation-play-state: paused;
 }
 
+.news-carousel-outer {
+    cursor: grab;
+}
+
+.news-carousel-outer:active {
+    cursor: grabbing;
+}
+
 @keyframes newsScroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }

@@ -342,6 +342,79 @@ if (object && !object.dataset.animated) {
         newsTrack.style.animationPlayState = 'paused';
     }
 
+    /* ── Drag-to-scroll for news carousel ── */
+    if (newsTrack) {
+        const outer = newsTrack.closest('.news-carousel-outer');
+        let isDragging = false;
+        let startX = 0;
+        let currentOffset = 0;
+        let resumeTimer = null;
+
+        function getHalfWidth() {
+            return newsTrack.scrollWidth / 2;
+        }
+
+        function getCurrentTranslateX() {
+            const matrix = new DOMMatrix(window.getComputedStyle(newsTrack).transform);
+            return matrix.m41;
+        }
+
+        function pauseCarousel() {
+            if (resumeTimer) clearTimeout(resumeTimer);
+            currentOffset = getCurrentTranslateX();
+            newsTrack.style.animationPlayState = 'paused';
+            newsTrack.style.transform = `translateX(${currentOffset}px)`;
+        }
+
+        function resumeCarousel() {
+            const halfWidth = getHalfWidth();
+            const progress = Math.abs(currentOffset) / halfWidth;
+            const duration = 52;
+            const delay = -(progress * duration);
+            newsTrack.style.animation = `newsScroll ${duration}s ${delay}s linear infinite`;
+            newsTrack.style.transform = '';
+        }
+
+        function onDragStart(clientX) {
+            isDragging = true;
+            startX = clientX;
+            pauseCarousel();
+            if (outer) outer.style.cursor = 'grabbing';
+        }
+
+        function onDragMove(clientX) {
+            if (!isDragging) return;
+            const halfWidth = getHalfWidth();
+            let next = currentOffset + (clientX - startX);
+            next = ((next % halfWidth) - halfWidth) % (-halfWidth);
+            if (next > 0) next -= halfWidth;
+            newsTrack.style.transform = `translateX(${next}px)`;
+        }
+
+        function onDragEnd(clientX) {
+            if (!isDragging) return;
+            isDragging = false;
+            const halfWidth = getHalfWidth();
+            currentOffset = currentOffset + (clientX - startX);
+            currentOffset = ((currentOffset % halfWidth) - halfWidth) % (-halfWidth);
+            if (currentOffset > 0) currentOffset -= halfWidth;
+            if (outer) outer.style.cursor = 'grab';
+            resumeTimer = setTimeout(resumeCarousel, 2000);
+        }
+
+        // Mouse
+        newsTrack.addEventListener('mousedown', e => { e.preventDefault(); onDragStart(e.clientX); });
+        window.addEventListener('mousemove', e => { if (isDragging) onDragMove(e.clientX); });
+        window.addEventListener('mouseup', e => { if (isDragging) onDragEnd(e.clientX); });
+
+        // Touch
+        newsTrack.addEventListener('touchstart', e => { onDragStart(e.touches[0].clientX); }, { passive: true });
+        newsTrack.addEventListener('touchmove', e => { onDragMove(e.touches[0].clientX); }, { passive: true });
+        newsTrack.addEventListener('touchend', e => { onDragEnd(e.changedTouches[0].clientX); }, { passive: true });
+
+        if (outer) outer.style.cursor = 'grab';
+    }
+
 
     /* =====================================================
        FOOTER - PARALLAX DARK TRANSITION
