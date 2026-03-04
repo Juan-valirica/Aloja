@@ -343,7 +343,7 @@
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/news_elpais.jpg"
+                    <img src="assets/img/press/news_elpais.png"
                          alt="El País" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">El País</span>
@@ -429,7 +429,7 @@
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/news_elpais.jpg"
+                    <img src="assets/img/press/news_elpais.png"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">El País</span>
