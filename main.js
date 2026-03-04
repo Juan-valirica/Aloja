@@ -362,7 +362,8 @@ if (object && !object.dataset.animated) {
         function pauseCarousel() {
             if (resumeTimer) clearTimeout(resumeTimer);
             currentOffset = getCurrentTranslateX();
-            newsTrack.style.animationPlayState = 'paused';
+            // Remove animation entirely so inline transform takes effect
+            newsTrack.style.animation = 'none';
             newsTrack.style.transform = `translateX(${currentOffset}px)`;
         }
 
@@ -371,8 +372,8 @@ if (object && !object.dataset.animated) {
             const progress = Math.abs(currentOffset) / halfWidth;
             const duration = 52;
             const delay = -(progress * duration);
-            newsTrack.style.animation = `newsScroll ${duration}s ${delay}s linear infinite`;
             newsTrack.style.transform = '';
+            newsTrack.style.animation = `newsScroll ${duration}s ${delay}s linear infinite`;
         }
 
         function onDragStart(clientX) {
