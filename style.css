@@ -1150,10 +1150,27 @@ html:not(.js-ready) .manifesto-text {
 
 /* ── Headline ── */
 .news-headline {
+    flex-grow: 1;
     font-size: 0.9rem;
     font-weight: 400;
     line-height: 1.6;
     color: rgba(0, 0, 0, 0.6);
+}
+
+/* ── Source link (bottom of card) ── */
+.news-source-link {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.35);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    align-self: flex-start;
+}
+
+.news-source-link:hover {
+    color: rgba(0, 0, 0, 0.85);
 }
 
 /* =====================================================

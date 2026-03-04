@@ -348,17 +348,9 @@
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">El País</span>
                 </div>
-                <p class="news-headline">Reseña en el diario El País, donde abordamos el inicio, el presente y el futuro de Aloja Experience.</p>
-            </article>
-
-            <article class="news-card">
-                <div class="news-source-logo">
-                    <img src="assets/img/press/ctrl-publicidad.svg"
-                         alt="Ctrl – CONTROL Publicidad" class="press-logo" loading="lazy"
-                         onerror="this.classList.add('press-logo--hidden')" />
-                    <span class="press-logo-text">Ctrl Publicidad</span>
-                </div>
-                <p class="news-headline">Los aficionados del Athletic de Bilbao tuvieron como sorpresa de bienvenida una degustación de Cervezas San Miguel en las neveras de sus alojamientos extrahoteleros de Sevilla.</p>
+                <p class="news-headline">Anfitriones que te reciben con cerveza en el apartamento turístico.</p>
+                <a href="https://elpais.com/economia/negocios/2024-06-20/anfitriones-que-te-reciben-con-cerveza-en-el-apartamento-turistico.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">El País</a>
             </article>
 
             <article class="news-card">
@@ -368,17 +360,21 @@
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Forbes</span>
                 </div>
-                <p class="news-headline">Aloja Experience cierra 150.000€ en su primera ronda de inversión.</p>
+                <p class="news-headline">Aloja Experience cierra 150.000€ en su primera ronda liderada por Unitatea DrapeB1 y Successful SPV.</p>
+                <a href="https://forbes.es/ultima-hora/229636/aloja-experience-cierra-150-000e-en-su-primera-ronda-liderada-por-unitatea-draperb1-y-successful-spv/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">Forbes</a>
             </article>
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/md.svg"
-                         alt="md" class="press-logo" loading="lazy"
+                    <img src="assets/img/press/marketing-directo.svg"
+                         alt="Marketing Directo" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
-                    <span class="press-logo-text">md</span>
+                    <span class="press-logo-text">Marketing Directo</span>
                 </div>
-                <p class="news-headline">Johnnie Walker apuesta por la experiencia de marca con Aloja Experience.</p>
+                <p class="news-headline">Johnnie Walker Black Label apuesta por la experiencia de marca con Aloja Experience.</p>
+                <a href="https://www.marketingdirecto.com/anunciantes-general/anunciantes/johnnie-walker-black-label-apuesta-experiencia-marca"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">Marketing Directo</a>
             </article>
 
             <article class="news-card">
@@ -389,6 +385,8 @@
                     <span class="press-logo-text">Autopista</span>
                 </div>
                 <p class="news-headline">Este verano la sobremesa va a ser el mejor momento del viaje gracias a Ruavieja Cremosa Light.</p>
+                <a href="https://www.autopista.es/planeta2030/este-verano-sobremesa-va-ser-mejor-momento-viaje-gracias-ruavieja-cremosa-light_262457_102.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">Autopista</a>
             </article>
 
             <article class="news-card">
@@ -398,7 +396,9 @@
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">IPMARK</span>
                 </div>
-                <p class="news-headline">G.H. MUMM hace "xtraordinarias" las estancias en los alojamientos de Sierra Nevada.</p>
+                <p class="news-headline">G.H. Mumm hace "xtraordinarias" las estancias en los alojamientos de Sierra Nevada.</p>
+                <a href="https://ipmark.com/g-h-mumm-hace-xtraordinarias-las-estancias-en-los-alojamientos-de-sierra-nevada/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">IPMARK</a>
             </article>
 
             <article class="news-card">
@@ -408,17 +408,21 @@
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">La Razón</span>
                 </div>
-                <p class="news-headline">Aloja Experience, una apuesta de la aceleradora de EAE Business School.</p>
+                <p class="news-headline">Aloja Experience apuesta por la aceleradora de EAE Business School.</p>
+                <a href="https://www.larazon.es/economia/startups/aloja-experience-apuesta-aceleradora-eae-business-school_202303036401d3d188ee05000147c98d.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">La Razón</a>
             </article>
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/radiointereconomia.svg"
+                    <img src="assets/img/press/intereconomia.svg"
                          alt="Radio Intereconomía" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Radio Intereconomía</span>
                 </div>
-                <p class="news-headline">Visita al estudio de "Antes de que amanezca" en Radio Intereconomía, presentándole nuestro proyecto de Aloja Experience a Guillermo "Willy" Sancho Muela.</p>
+                <p class="news-headline">Visita al estudio de "Antes de que amanezca" en Radio Intereconomía, presentando Aloja Experience a Guillermo Sancho Muela.</p>
+                <a href="https://intereconomia.com/programas/antes-de-que-amanezca/antes-de-que-amanezca-11-04-2024-20240411-0715/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">Radio Intereconomía</a>
             </article>
 
             <!-- ── DUPLICATE SET (seamless loop) ── -->
@@ -430,17 +434,9 @@
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">El País</span>
                 </div>
-                <p class="news-headline">Reseña en el diario El País, donde abordamos el inicio, el presente y el futuro de Aloja Experience.</p>
-            </article>
-
-            <article class="news-card" aria-hidden="true">
-                <div class="news-source-logo">
-                    <img src="assets/img/press/ctrl-publicidad.svg"
-                         alt="" class="press-logo" loading="lazy"
-                         onerror="this.classList.add('press-logo--hidden')" />
-                    <span class="press-logo-text">Ctrl Publicidad</span>
-                </div>
-                <p class="news-headline">Los aficionados del Athletic de Bilbao tuvieron como sorpresa de bienvenida una degustación de Cervezas San Miguel en las neveras de sus alojamientos extrahoteleros de Sevilla.</p>
+                <p class="news-headline">Anfitriones que te reciben con cerveza en el apartamento turístico.</p>
+                <a href="https://elpais.com/economia/negocios/2024-06-20/anfitriones-que-te-reciben-con-cerveza-en-el-apartamento-turistico.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">El País</a>
             </article>
 
             <article class="news-card" aria-hidden="true">
@@ -450,17 +446,21 @@
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Forbes</span>
                 </div>
-                <p class="news-headline">Aloja Experience cierra 150.000€ en su primera ronda de inversión.</p>
+                <p class="news-headline">Aloja Experience cierra 150.000€ en su primera ronda liderada por Unitatea DrapeB1 y Successful SPV.</p>
+                <a href="https://forbes.es/ultima-hora/229636/aloja-experience-cierra-150-000e-en-su-primera-ronda-liderada-por-unitatea-draperb1-y-successful-spv/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">Forbes</a>
             </article>
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/md.svg"
+                    <img src="assets/img/press/marketing-directo.svg"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
-                    <span class="press-logo-text">md</span>
+                    <span class="press-logo-text">Marketing Directo</span>
                 </div>
-                <p class="news-headline">Johnnie Walker apuesta por la experiencia de marca con Aloja Experience.</p>
+                <p class="news-headline">Johnnie Walker Black Label apuesta por la experiencia de marca con Aloja Experience.</p>
+                <a href="https://www.marketingdirecto.com/anunciantes-general/anunciantes/johnnie-walker-black-label-apuesta-experiencia-marca"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">Marketing Directo</a>
             </article>
 
             <article class="news-card" aria-hidden="true">
@@ -471,6 +471,8 @@
                     <span class="press-logo-text">Autopista</span>
                 </div>
                 <p class="news-headline">Este verano la sobremesa va a ser el mejor momento del viaje gracias a Ruavieja Cremosa Light.</p>
+                <a href="https://www.autopista.es/planeta2030/este-verano-sobremesa-va-ser-mejor-momento-viaje-gracias-ruavieja-cremosa-light_262457_102.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">Autopista</a>
             </article>
 
             <article class="news-card" aria-hidden="true">
@@ -480,7 +482,9 @@
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">IPMARK</span>
                 </div>
-                <p class="news-headline">G.H. MUMM hace "xtraordinarias" las estancias en los alojamientos de Sierra Nevada.</p>
+                <p class="news-headline">G.H. Mumm hace "xtraordinarias" las estancias en los alojamientos de Sierra Nevada.</p>
+                <a href="https://ipmark.com/g-h-mumm-hace-xtraordinarias-las-estancias-en-los-alojamientos-de-sierra-nevada/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">IPMARK</a>
             </article>
 
             <article class="news-card" aria-hidden="true">
@@ -490,17 +494,21 @@
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">La Razón</span>
                 </div>
-                <p class="news-headline">Aloja Experience, una apuesta de la aceleradora de EAE Business School.</p>
+                <p class="news-headline">Aloja Experience apuesta por la aceleradora de EAE Business School.</p>
+                <a href="https://www.larazon.es/economia/startups/aloja-experience-apuesta-aceleradora-eae-business-school_202303036401d3d188ee05000147c98d.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">La Razón</a>
             </article>
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/radiointereconomia.svg"
+                    <img src="assets/img/press/intereconomia.svg"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Radio Intereconomía</span>
                 </div>
-                <p class="news-headline">Visita al estudio de "Antes de que amanezca" en Radio Intereconomía, presentándole nuestro proyecto de Aloja Experience a Guillermo "Willy" Sancho Muela.</p>
+                <p class="news-headline">Visita al estudio de "Antes de que amanezca" en Radio Intereconomía, presentando Aloja Experience a Guillermo Sancho Muela.</p>
+                <a href="https://intereconomia.com/programas/antes-de-que-amanezca/antes-de-que-amanezca-11-04-2024-20240411-0715/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">Radio Intereconomía</a>
             </article>
 
         </div>
