@@ -194,7 +194,7 @@
                    rel="noopener noreferrer"
                    class="brand-link">
 
-                    <span class="brand-claim">Diseñamos y ejecutamos<br>estrategias</span>
+                    <span class="brand-claim">Diseñamos y ejecutamos<br>estrategias en</span>
 
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-agency.png"
@@ -240,7 +240,7 @@
                    rel="noopener noreferrer"
                    class="brand-link">
 
-                    <span class="brand-claim">Te ponemos<br>en tu sitio.</span>
+                    <span class="brand-claim">Te ponemos<br>en tu sitio en</span>
 
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-experience.png"
