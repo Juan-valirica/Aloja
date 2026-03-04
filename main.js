@@ -333,36 +333,14 @@ if (object && !object.dataset.animated) {
 
 
     /* =====================================================
-       FOUNDERS - ENTRY FROM SIDES
+       NEWS CAROUSEL – PAUSE ON REDUCED MOTION
        ===================================================== */
 
- const founderCards = document.querySelectorAll('.founder-card');
-const foundersSection = document.querySelector('.founders-section');
+    const newsTrack = document.querySelector('.news-carousel-track');
 
-if (founderCards.length > 0 && foundersSection) {
-
-    const foundersObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                founderCards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                        card.classList.remove('exit');
-                    }, index * 200);
-                });
-            } else {
-                founderCards.forEach(card => {
-                    card.classList.remove('visible');
-                    card.classList.add('exit');
-                });
-            }
-
-        });
-    }, { threshold: 0.3 });
-
-    foundersObserver.observe(foundersSection);
-}
+    if (newsTrack && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        newsTrack.style.animationPlayState = 'paused';
+    }
 
 
     /* =====================================================

@@ -328,46 +328,183 @@
 </div>
 
 <!-- =====================================================
-     SECTION 5: FOUNDERS
+     SECTION 5: ALOJA NEWS – PRESS CAROUSEL
 ===================================================== -->
-<section class="founders-section" id="founders" aria-label="Fundadores">
+<section class="news-section" id="news" aria-label="Aloja News">
 
-    <div class="founders-container">
+    <div class="news-header">
+        <span class="news-section-label">En los medios</span>
+        <h2 class="news-title">Aloja News</h2>
+    </div>
 
-        <!-- Cristian - CEO (Enters from Left) -->
-        <div class="founder-card founder-left">
-            <div class="founder-image">
-                <img src="assets/img/founder-cristian.png" alt="Cristian Rivas, Founder y CEO de Aloja Group" loading="lazy" width="280" height="280" />
-            </div>
-            <div class="founder-info">
-                <span class="founder-role"><strong>Founder</strong> CEO</span>
-                <h3 class="founder-name">Cristian Rivas</h3>
-                <a href="https://www.linkedin.com/in/cristianrivaslinkedin/" target="_blank" rel="noopener noreferrer" class="founder-linkedin">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    <span>Conectar</span>
-                </a>
-            </div>
+    <div class="news-carousel-outer">
+        <div class="news-carousel-track">
+
+            <!-- ── ORIGINAL SET ── -->
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/elpais.svg"
+                         alt="El País" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">El País</span>
+                </div>
+                <p class="news-headline">Reseña en el diario El País, donde abordamos el inicio, el presente y el futuro de Aloja Experience.</p>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/ctrl-publicidad.svg"
+                         alt="Ctrl – CONTROL Publicidad" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Ctrl Publicidad</span>
+                </div>
+                <p class="news-headline">Los aficionados del Athletic de Bilbao tuvieron como sorpresa de bienvenida una degustación de Cervezas San Miguel en las neveras de sus alojamientos extrahoteleros de Sevilla.</p>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/forbes.svg"
+                         alt="Forbes" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Forbes</span>
+                </div>
+                <p class="news-headline">Aloja Experience cierra 150.000€ en su primera ronda de inversión.</p>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/md.svg"
+                         alt="md" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">md</span>
+                </div>
+                <p class="news-headline">Johnnie Walker apuesta por la experiencia de marca con Aloja Experience.</p>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/autopista.svg"
+                         alt="Autopista" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Autopista</span>
+                </div>
+                <p class="news-headline">Este verano la sobremesa va a ser el mejor momento del viaje gracias a Ruavieja Cremosa Light.</p>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/ipmark.svg"
+                         alt="IPMARK" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">IPMARK</span>
+                </div>
+                <p class="news-headline">G.H. MUMM hace "xtraordinarias" las estancias en los alojamientos de Sierra Nevada.</p>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/larazon.svg"
+                         alt="La Razón" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">La Razón</span>
+                </div>
+                <p class="news-headline">Aloja Experience, una apuesta de la aceleradora de EAE Business School.</p>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/radiointereconomia.svg"
+                         alt="Radio Intereconomía" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Radio Intereconomía</span>
+                </div>
+                <p class="news-headline">Visita al estudio de "Antes de que amanezca" en Radio Intereconomía, presentándole nuestro proyecto de Aloja Experience a Guillermo "Willy" Sancho Muela.</p>
+            </article>
+
+            <!-- ── DUPLICATE SET (seamless loop) ── -->
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/elpais.svg"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">El País</span>
+                </div>
+                <p class="news-headline">Reseña en el diario El País, donde abordamos el inicio, el presente y el futuro de Aloja Experience.</p>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/ctrl-publicidad.svg"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Ctrl Publicidad</span>
+                </div>
+                <p class="news-headline">Los aficionados del Athletic de Bilbao tuvieron como sorpresa de bienvenida una degustación de Cervezas San Miguel en las neveras de sus alojamientos extrahoteleros de Sevilla.</p>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/forbes.svg"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Forbes</span>
+                </div>
+                <p class="news-headline">Aloja Experience cierra 150.000€ en su primera ronda de inversión.</p>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/md.svg"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">md</span>
+                </div>
+                <p class="news-headline">Johnnie Walker apuesta por la experiencia de marca con Aloja Experience.</p>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/autopista.svg"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Autopista</span>
+                </div>
+                <p class="news-headline">Este verano la sobremesa va a ser el mejor momento del viaje gracias a Ruavieja Cremosa Light.</p>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/ipmark.svg"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">IPMARK</span>
+                </div>
+                <p class="news-headline">G.H. MUMM hace "xtraordinarias" las estancias en los alojamientos de Sierra Nevada.</p>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/larazon.svg"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">La Razón</span>
+                </div>
+                <p class="news-headline">Aloja Experience, una apuesta de la aceleradora de EAE Business School.</p>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/radiointereconomia.svg"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Radio Intereconomía</span>
+                </div>
+                <p class="news-headline">Visita al estudio de "Antes de que amanezca" en Radio Intereconomía, presentándole nuestro proyecto de Aloja Experience a Guillermo "Willy" Sancho Muela.</p>
+            </article>
+
         </div>
-
-        <!-- Santiago - CFO (Enters from Right) -->
-        <div class="founder-card founder-right">
-            <div class="founder-image">
-                <img src="assets/img/founder-santiago.png" alt="Santiago Tobón, Founder y CFO de Aloja Group" loading="lazy" width="280" height="280" />
-            </div>
-            <div class="founder-info">
-                <span class="founder-role"><strong>Founder</strong> CFO</span>
-                <h3 class="founder-name">Santiago Tobón</h3>
-                <a href="https://www.linkedin.com/in/stobont/" target="_blank" rel="noopener noreferrer" class="founder-linkedin">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    <span>Conectar</span>
-                </a>
-            </div>
-        </div>
-
     </div>
 
 </section>

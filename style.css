@@ -773,8 +773,6 @@ html.js-ready .brand-card.visible:focus-within .brand-logo--default {
     top: 0;
     left: 0;
     width: 100%;
-    /* Sits 6px higher than default → simulates icon shifting upward */
-    transform: translateY(-6px);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.13s ease-out;
@@ -1032,134 +1030,146 @@ html:not(.js-ready) .manifesto-text {
    SECTION 5: FOUNDERS
    ===================================================== */
 
-.founders-section {
+/* =====================================================
+   SECTION 5: ALOJA NEWS – PRESS CAROUSEL
+   ===================================================== */
+
+.news-section {
     position: relative;
     background: #ffffff;
-    padding: 120px 60px;
+    padding: 120px 0;
     overflow: hidden;
 }
 
-.founders-container {
+/* ── Header ── */
+.news-header {
     max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    margin: 0 auto 64px;
+    padding: 0 60px;
 }
 
-.founder-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 60px 40px;
+.news-section-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.38);
+    margin-bottom: 14px;
 }
 
-/* Founders animation when JS is ready */
-html.js-ready .founder-card.founder-left {
-    opacity: 0;
-    transform: translateX(-120px) scale(0.95);
-
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+.news-title {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #000000;
+    line-height: 1;
 }
 
-html.js-ready .founder-card.founder-right {
-    opacity: 0;
-    transform: translateX(120px) scale(0.95);
-
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-html.js-ready .founder-card.visible {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-}
-
-/* Founder Image - Large, B&W */
-.founder-image {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
+/* ── Carousel outer: clips + fades edges ── */
+.news-carousel-outer {
     overflow: hidden;
-    margin-bottom: 40px;
-    position: relative;
-    background: linear-gradient(135deg, rgba(0,0,0,0.05), rgba(0,0,0,0.02));
-    padding: 4px;
-}
-
-.founder-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    filter: grayscale(100%);
-    transition: filter 0.6s ease, transform 0.6s ease;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 7%,
+        black 93%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 7%,
+        black 93%,
+        transparent 100%
+    );
 }
 
-.founder-card:hover .founder-image img {
-    filter: grayscale(0%);
-    transform: scale(1.05);
+/* ── Scrolling track ── */
+.news-carousel-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    padding: 8px 0 40px;         /* bottom padding for card shadows */
+    animation: newsScroll 52s linear infinite;
+    will-change: transform;
 }
 
-/* Founder Info */
-.founder-info {
+.news-carousel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes newsScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ── Card ── */
+.news-card {
+    flex-shrink: 0;
+    width: 300px;
+    padding: 32px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
+    gap: 18px;
+    transition:
+        border-color 0.3s ease,
+        box-shadow   0.3s ease,
+        transform    0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.news-card:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+/* ── Press logo ── */
+.news-source-logo {
+    height: 36px;
+    display: flex;
     align-items: center;
-    gap: 12px;
 }
 
-.founder-role {
-    font-size: 0.9rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.5);
+.press-logo {
+    max-height: 36px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+    display: block;
+    filter: grayscale(1) contrast(1.1);
 }
 
-.founder-role strong {
-    font-weight: 700;
-    color: #000000;
+.press-logo--hidden {
+    display: none !important;
 }
 
-.founder-name {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    color: #000000;
+/* Text shown when logo image is unavailable */
+.press-logo-text {
+    display: none;
+    font-size: 1.05rem;
+    font-weight: 800;
     letter-spacing: -0.02em;
+    color: #000000;
+    font-style: italic;
 }
 
-/* LinkedIn Button - Emphasized */
-.founder-linkedin {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    margin-top: 20px;
-    border: 2px solid #000000;
-    background: transparent;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.press-logo--hidden + .press-logo-text {
+    display: block;
 }
 
-.founder-linkedin svg {
-    transition: transform 0.4s ease;
-}
-
-.founder-linkedin span {
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.founder-linkedin:hover {
-    background: #000000;
-    color: #ffffff;
-}
-
-.founder-linkedin:hover svg {
-    transform: scale(1.1);
+/* ── Headline ── */
+.news-headline {
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 /* =====================================================
@@ -1396,20 +1406,16 @@ html.js-ready .founder-card.visible {
     }
 
     /* ===============================
-       FOUNDERS – TABLET EDITORIAL
+       NEWS – TABLET
        =============================== */
 
-    .founders-container {
-        gap: 56px;
+    .news-header {
+        padding: 0 40px;
+        margin-bottom: 48px;
     }
 
-    .founder-card {
-        padding: 40px 30px;
-    }
-
-    .founder-image {
-        width: 220px;
-        height: 220px;
+    .news-card {
+        width: 280px;
     }
 
 }
@@ -1423,9 +1429,12 @@ html.js-ready .founder-card.visible {
 
     .headline-section,
     .brands-section,
-    .manifesto-section,
-    .founders-section {
+    .manifesto-section {
         padding: 80px 30px;
+    }
+
+    .news-section {
+        padding: 80px 0;
     }
 
     .section-divider {
@@ -1533,32 +1542,17 @@ html.js-ready .founder-card.visible {
     }
 
     /* ===============================
-       FOUNDERS – EDITORIAL SPACING
+       NEWS – MOBILE
        =============================== */
 
-    .founders-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
+    .news-header {
+        padding: 0 24px;
+        margin-bottom: 36px;
     }
 
-    .founder-card {
-        padding: 30px 20px;
-    }
-
-    .founder-left,
-    .founder-right {
-        transform: translateY(60px);
-    }
-
-    .founder-left.visible,
-    .founder-right.visible {
-        transform: translateY(0);
-    }
-
-    .founder-image {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 24px;
+    .news-card {
+        width: 260px;
+        padding: 26px 22px;
     }
 
     /* ===============================
@@ -1610,9 +1604,12 @@ html.js-ready .founder-card.visible {
 
     .headline-section,
     .brands-section,
-    .manifesto-section,
-    .founders-section {
+    .manifesto-section {
         padding: 60px 20px;
+    }
+
+    .news-section {
+        padding: 60px 0;
     }
 
     .section-divider {
@@ -1685,29 +1682,15 @@ html.js-ready .founder-card.visible {
     }
 
     /* ===============================
-       FOUNDERS – MOBILE EDITORIAL
+       NEWS – SMALLEST MOBILE
        =============================== */
 
-    .founders-container {
-        gap: 40px;
+    .news-card {
+        width: 240px;
     }
 
-    .founder-card {
-        padding: 24px 16px;
-    }
-
-    .founder-image {
-        width: 160px;
-        height: 160px;
-        margin-bottom: 24px;
-    }
-
-    .founder-name {
-        font-size: 1.8rem;
-    }
-
-    .founder-linkedin {
-        padding: 12px 20px;
+    .news-title {
+        font-size: 2rem;
     }
 
     /* ===============================
