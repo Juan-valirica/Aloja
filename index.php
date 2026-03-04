@@ -343,7 +343,7 @@
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/elpais.svg"
+                    <img src="img/press/news_elpais.png"
                          alt="El País" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">El País</span>
@@ -355,7 +355,7 @@
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/forbes.svg"
+                    <img src="img/press/news_forbes.png"
                          alt="Forbes" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Forbes</span>
@@ -367,7 +367,7 @@
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/marketing-directo.svg"
+                    <img src="img/press/news_marketingdirecto.png"
                          alt="Marketing Directo" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Marketing Directo</span>
@@ -379,7 +379,7 @@
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/autopista.svg"
+                    <img src="img/press/news_autopista.png"
                          alt="Autopista" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Autopista</span>
@@ -391,7 +391,7 @@
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/ipmark.svg"
+                    <img src="img/press/news_ipmark.png"
                          alt="IPMARK" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">IPMARK</span>
@@ -403,7 +403,7 @@
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/larazon.svg"
+                    <img src="img/press/news_larazon.png"
                          alt="La Razón" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">La Razón</span>
@@ -415,7 +415,7 @@
 
             <article class="news-card">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/intereconomia.svg"
+                    <img src="img/press/news_intereconomia.png"
                          alt="Radio Intereconomía" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Radio Intereconomía</span>
@@ -429,7 +429,7 @@
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/elpais.svg"
+                    <img src="img/press/news_elpais.png"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">El País</span>
@@ -441,7 +441,7 @@
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/forbes.svg"
+                    <img src="img/press/news_forbes.png"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Forbes</span>
@@ -453,7 +453,7 @@
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/marketing-directo.svg"
+                    <img src="img/press/news_marketingdirecto.png"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Marketing Directo</span>
@@ -465,7 +465,7 @@
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/autopista.svg"
+                    <img src="img/press/news_autopista.png"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Autopista</span>
@@ -477,7 +477,7 @@
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/ipmark.svg"
+                    <img src="img/press/news_ipmark.png"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">IPMARK</span>
@@ -489,7 +489,7 @@
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/larazon.svg"
+                    <img src="img/press/news_larazon.png"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">La Razón</span>
@@ -501,7 +501,7 @@
 
             <article class="news-card" aria-hidden="true">
                 <div class="news-source-logo">
-                    <img src="assets/img/press/intereconomia.svg"
+                    <img src="img/press/news_intereconomia.png"
                          alt="" class="press-logo" loading="lazy"
                          onerror="this.classList.add('press-logo--hidden')" />
                     <span class="press-logo-text">Radio Intereconomía</span>
