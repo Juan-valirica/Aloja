@@ -333,36 +333,84 @@ if (object && !object.dataset.animated) {
 
 
     /* =====================================================
-       FOUNDERS - ENTRY FROM SIDES
+       NEWS CAROUSEL – PAUSE ON REDUCED MOTION
        ===================================================== */
 
- const founderCards = document.querySelectorAll('.founder-card');
-const foundersSection = document.querySelector('.founders-section');
+    const newsTrack = document.querySelector('.news-carousel-track');
 
-if (founderCards.length > 0 && foundersSection) {
+    if (newsTrack && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        newsTrack.style.animationPlayState = 'paused';
+    }
 
-    const foundersObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    /* ── Drag-to-scroll for news carousel ── */
+    if (newsTrack) {
+        const outer = newsTrack.closest('.news-carousel-outer');
+        let isDragging = false;
+        let dragStartX = 0;
+        let offsetAtDragStart = 0;
+        let resumeTimer = null;
 
-            if (entry.isIntersecting) {
-                founderCards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('visible');
-                        card.classList.remove('exit');
-                    }, index * 200);
-                });
-            } else {
-                founderCards.forEach(card => {
-                    card.classList.remove('visible');
-                    card.classList.add('exit');
-                });
-            }
+        // Read current translated X in pixels from computed style
+        function getTranslateX() {
+            const t = window.getComputedStyle(newsTrack).transform;
+            if (!t || t === 'none') return 0;
+            return new DOMMatrix(t).m41;
+        }
 
+        function startDrag(clientX) {
+            if (resumeTimer) clearTimeout(resumeTimer);
+            isDragging = true;
+            dragStartX = clientX;
+            offsetAtDragStart = getTranslateX();
+            // Kill animation so inline transform is in full control
+            newsTrack.style.animation = 'none';
+            newsTrack.style.transform = `translateX(${offsetAtDragStart}px)`;
+            document.body.style.userSelect = 'none';
+            if (outer) outer.style.cursor = 'grabbing';
+        }
+
+        function moveDrag(clientX) {
+            if (!isDragging) return;
+            const delta = clientX - dragStartX;
+            newsTrack.style.transform = `translateX(${offsetAtDragStart + delta}px)`;
+        }
+
+        function endDrag(clientX) {
+            if (!isDragging) return;
+            isDragging = false;
+            document.body.style.userSelect = '';
+            if (outer) outer.style.cursor = 'grab';
+
+            // Normalize offset into [-halfWidth, 0] range before resuming
+            const halfWidth = newsTrack.scrollWidth / 2;
+            let finalOffset = offsetAtDragStart + (clientX - dragStartX);
+            finalOffset = finalOffset % halfWidth;
+            if (finalOffset > 0) finalOffset -= halfWidth;
+            newsTrack.style.transform = `translateX(${finalOffset}px)`;
+
+            resumeTimer = setTimeout(() => {
+                const progress = Math.abs(finalOffset) / halfWidth;
+                const delay = -(progress * 52);
+                newsTrack.style.transform = '';
+                newsTrack.style.animation = `newsScroll 52s ${delay}s linear infinite`;
+            }, 2000);
+        }
+
+        // Mouse
+        newsTrack.addEventListener('mousedown', e => {
+            e.preventDefault();
+            startDrag(e.clientX);
         });
-    }, { threshold: 0.3 });
+        window.addEventListener('mousemove', e => moveDrag(e.clientX));
+        window.addEventListener('mouseup',   e => endDrag(e.clientX));
 
-    foundersObserver.observe(foundersSection);
-}
+        // Touch
+        newsTrack.addEventListener('touchstart', e => startDrag(e.touches[0].clientX),          { passive: true });
+        newsTrack.addEventListener('touchmove',  e => moveDrag(e.touches[0].clientX),            { passive: true });
+        newsTrack.addEventListener('touchend',   e => endDrag(e.changedTouches[0].clientX),      { passive: true });
+
+        if (outer) outer.style.cursor = 'grab';
+    }
 
 
     /* =====================================================

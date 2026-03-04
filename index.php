@@ -86,16 +86,18 @@
             .block-content,
             .manifesto-block,
             .brand-card,
-            .brand-logo,
             .brand-cta,
             .founder-card {
                 opacity: 1 !important;
                 transform: none !important;
                 visibility: visible !important;
             }
-            .brand-logo {
-                -webkit-mask-image: none !important;
-                mask-image: none !important;
+            .brand-logo--default {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .brand-logo-hover-overlay {
+                display: none !important;
             }
             .divider-line {
                 transform: scaleX(1) !important;
@@ -192,13 +194,19 @@
                    rel="noopener noreferrer"
                    class="brand-link">
 
-                    <span class="brand-claim">Diseñamos y ejecutamos<br>estrategias</span>
+                    <span class="brand-claim">Diseñamos y ejecutamos<br>estrategias en</span>
 
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-agency.png"
                              alt="Aloja Agency"
-                             class="brand-logo"
+                             class="brand-logo brand-logo--default"
                              loading="lazy" />
+                        <div class="brand-logo-hover-overlay" aria-hidden="true">
+                            <img src="assets/img/logo-aloja-agency2.png"
+                                 alt=""
+                                 class="brand-logo"
+                                 loading="lazy" />
+                        </div>
                     </div>
 
                     <div class="brand-cta">
@@ -232,13 +240,19 @@
                    rel="noopener noreferrer"
                    class="brand-link">
 
-                    <span class="brand-claim">Te ponemos<br>en tu sitio.</span>
+                    <span class="brand-claim">Te ponemos<br>en tu sitio en</span>
 
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-experience.png"
                              alt="Aloja Experience"
-                             class="brand-logo"
+                             class="brand-logo brand-logo--default"
                              loading="lazy" />
+                        <div class="brand-logo-hover-overlay" aria-hidden="true">
+                            <img src="assets/img/logo-aloja-experience2.png"
+                                 alt=""
+                                 class="brand-logo"
+                                 loading="lazy" />
+                        </div>
                     </div>
 
                     <div class="brand-cta">
@@ -313,46 +327,191 @@
 </div>
 
 <!-- =====================================================
-     SECTION 5: FOUNDERS
+     SECTION 5: ALOJA NEWS – PRESS CAROUSEL
 ===================================================== -->
-<section class="founders-section" id="founders" aria-label="Fundadores">
+<section class="news-section" id="news" aria-label="Aloja News">
 
-    <div class="founders-container">
+    <div class="news-header">
+        <span class="news-section-label">En los medios</span>
+        <h2 class="news-title">Aloja News</h2>
+    </div>
 
-        <!-- Cristian - CEO (Enters from Left) -->
-        <div class="founder-card founder-left">
-            <div class="founder-image">
-                <img src="assets/img/founder-cristian.png" alt="Cristian Rivas, Founder y CEO de Aloja Group" loading="lazy" width="280" height="280" />
-            </div>
-            <div class="founder-info">
-                <span class="founder-role"><strong>Founder</strong> CEO</span>
-                <h3 class="founder-name">Cristian Rivas</h3>
-                <a href="https://www.linkedin.com/in/cristianrivaslinkedin/" target="_blank" rel="noopener noreferrer" class="founder-linkedin">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    <span>Conectar</span>
-                </a>
-            </div>
+    <div class="news-carousel-outer">
+        <div class="news-carousel-track">
+
+            <!-- ── ORIGINAL SET ── -->
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_elpais.png"
+                         alt="El País" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">El País</span>
+                </div>
+                <p class="news-headline">Anfitriones que te reciben con cerveza en el apartamento turístico.</p>
+                <a href="https://elpais.com/economia/negocios/2024-06-20/anfitriones-que-te-reciben-con-cerveza-en-el-apartamento-turistico.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">El País</a>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_forbes.png"
+                         alt="Forbes" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Forbes</span>
+                </div>
+                <p class="news-headline">Aloja Experience cierra 150.000€ en su primera ronda liderada por Unitatea DrapeB1 y Successful SPV.</p>
+                <a href="https://forbes.es/ultima-hora/229636/aloja-experience-cierra-150-000e-en-su-primera-ronda-liderada-por-unitatea-draperb1-y-successful-spv/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">Forbes</a>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_marketingdirecto.png"
+                         alt="Marketing Directo" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Marketing Directo</span>
+                </div>
+                <p class="news-headline">Johnnie Walker Black Label apuesta por la experiencia de marca con Aloja Experience.</p>
+                <a href="https://www.marketingdirecto.com/anunciantes-general/anunciantes/johnnie-walker-black-label-apuesta-experiencia-marca"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">Marketing Directo</a>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_autopista.png"
+                         alt="Autopista" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Autopista</span>
+                </div>
+                <p class="news-headline">Este verano la sobremesa va a ser el mejor momento del viaje gracias a Ruavieja Cremosa Light.</p>
+                <a href="https://www.autopista.es/planeta2030/este-verano-sobremesa-va-ser-mejor-momento-viaje-gracias-ruavieja-cremosa-light_262457_102.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">Autopista</a>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_ipmark.png"
+                         alt="IPMARK" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">IPMARK</span>
+                </div>
+                <p class="news-headline">G.H. Mumm hace "xtraordinarias" las estancias en los alojamientos de Sierra Nevada.</p>
+                <a href="https://ipmark.com/g-h-mumm-hace-xtraordinarias-las-estancias-en-los-alojamientos-de-sierra-nevada/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">IPMARK</a>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_larazon.png"
+                         alt="La Razón" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">La Razón</span>
+                </div>
+                <p class="news-headline">Aloja Experience apuesta por la aceleradora de EAE Business School.</p>
+                <a href="https://www.larazon.es/economia/startups/aloja-experience-apuesta-aceleradora-eae-business-school_202303036401d3d188ee05000147c98d.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">La Razón</a>
+            </article>
+
+            <article class="news-card">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_intereconomia.png"
+                         alt="Radio Intereconomía" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Radio Intereconomía</span>
+                </div>
+                <p class="news-headline">Visita al estudio de "Antes de que amanezca" en Radio Intereconomía, presentando Aloja Experience a Guillermo Sancho Muela.</p>
+                <a href="https://intereconomia.com/programas/antes-de-que-amanezca/antes-de-que-amanezca-11-04-2024-20240411-0715/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer">Radio Intereconomía</a>
+            </article>
+
+            <!-- ── DUPLICATE SET (seamless loop) ── -->
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_elpais.png"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">El País</span>
+                </div>
+                <p class="news-headline">Anfitriones que te reciben con cerveza en el apartamento turístico.</p>
+                <a href="https://elpais.com/economia/negocios/2024-06-20/anfitriones-que-te-reciben-con-cerveza-en-el-apartamento-turistico.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">El País</a>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_forbes.png"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Forbes</span>
+                </div>
+                <p class="news-headline">Aloja Experience cierra 150.000€ en su primera ronda liderada por Unitatea DrapeB1 y Successful SPV.</p>
+                <a href="https://forbes.es/ultima-hora/229636/aloja-experience-cierra-150-000e-en-su-primera-ronda-liderada-por-unitatea-draperb1-y-successful-spv/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">Forbes</a>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_marketingdirecto.png"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Marketing Directo</span>
+                </div>
+                <p class="news-headline">Johnnie Walker Black Label apuesta por la experiencia de marca con Aloja Experience.</p>
+                <a href="https://www.marketingdirecto.com/anunciantes-general/anunciantes/johnnie-walker-black-label-apuesta-experiencia-marca"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">Marketing Directo</a>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_autopista.png"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Autopista</span>
+                </div>
+                <p class="news-headline">Este verano la sobremesa va a ser el mejor momento del viaje gracias a Ruavieja Cremosa Light.</p>
+                <a href="https://www.autopista.es/planeta2030/este-verano-sobremesa-va-ser-mejor-momento-viaje-gracias-ruavieja-cremosa-light_262457_102.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">Autopista</a>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_ipmark.png"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">IPMARK</span>
+                </div>
+                <p class="news-headline">G.H. Mumm hace "xtraordinarias" las estancias en los alojamientos de Sierra Nevada.</p>
+                <a href="https://ipmark.com/g-h-mumm-hace-xtraordinarias-las-estancias-en-los-alojamientos-de-sierra-nevada/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">IPMARK</a>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_larazon.png"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">La Razón</span>
+                </div>
+                <p class="news-headline">Aloja Experience apuesta por la aceleradora de EAE Business School.</p>
+                <a href="https://www.larazon.es/economia/startups/aloja-experience-apuesta-aceleradora-eae-business-school_202303036401d3d188ee05000147c98d.html"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">La Razón</a>
+            </article>
+
+            <article class="news-card" aria-hidden="true">
+                <div class="news-source-logo">
+                    <img src="assets/img/press/news_intereconomia.png"
+                         alt="" class="press-logo" loading="lazy"
+                         onerror="this.classList.add('press-logo--hidden')" />
+                    <span class="press-logo-text">Radio Intereconomía</span>
+                </div>
+                <p class="news-headline">Visita al estudio de "Antes de que amanezca" en Radio Intereconomía, presentando Aloja Experience a Guillermo Sancho Muela.</p>
+                <a href="https://intereconomia.com/programas/antes-de-que-amanezca/antes-de-que-amanezca-11-04-2024-20240411-0715/"
+                   class="news-source-link" target="_blank" rel="noopener noreferrer" tabindex="-1">Radio Intereconomía</a>
+            </article>
+
         </div>
-
-        <!-- Santiago - CFO (Enters from Right) -->
-        <div class="founder-card founder-right">
-            <div class="founder-image">
-                <img src="assets/img/founder-santiago.png" alt="Santiago Tobón, Founder y CFO de Aloja Group" loading="lazy" width="280" height="280" />
-            </div>
-            <div class="founder-info">
-                <span class="founder-role"><strong>Founder</strong> CFO</span>
-                <h3 class="founder-name">Santiago Tobón</h3>
-                <a href="https://www.linkedin.com/in/stobont/" target="_blank" rel="noopener noreferrer" class="founder-linkedin">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    <span>Conectar</span>
-                </a>
-            </div>
-        </div>
-
     </div>
 
 </section>
