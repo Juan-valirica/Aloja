@@ -346,72 +346,68 @@ if (object && !object.dataset.animated) {
     if (newsTrack) {
         const outer = newsTrack.closest('.news-carousel-outer');
         let isDragging = false;
-        let startX = 0;
-        let currentOffset = 0;
+        let dragStartX = 0;
+        let offsetAtDragStart = 0;
         let resumeTimer = null;
 
-        function getHalfWidth() {
-            return newsTrack.scrollWidth / 2;
+        // Read current translated X in pixels from computed style
+        function getTranslateX() {
+            const t = window.getComputedStyle(newsTrack).transform;
+            if (!t || t === 'none') return 0;
+            return new DOMMatrix(t).m41;
         }
 
-        function getCurrentTranslateX() {
-            const matrix = new DOMMatrix(window.getComputedStyle(newsTrack).transform);
-            return matrix.m41;
-        }
-
-        function pauseCarousel() {
+        function startDrag(clientX) {
             if (resumeTimer) clearTimeout(resumeTimer);
-            currentOffset = getCurrentTranslateX();
-            // Remove animation entirely so inline transform takes effect
-            newsTrack.style.animation = 'none';
-            newsTrack.style.transform = `translateX(${currentOffset}px)`;
-        }
-
-        function resumeCarousel() {
-            const halfWidth = getHalfWidth();
-            const progress = Math.abs(currentOffset) / halfWidth;
-            const duration = 52;
-            const delay = -(progress * duration);
-            newsTrack.style.transform = '';
-            newsTrack.style.animation = `newsScroll ${duration}s ${delay}s linear infinite`;
-        }
-
-        function onDragStart(clientX) {
             isDragging = true;
-            startX = clientX;
-            pauseCarousel();
+            dragStartX = clientX;
+            offsetAtDragStart = getTranslateX();
+            // Kill animation so inline transform is in full control
+            newsTrack.style.animation = 'none';
+            newsTrack.style.transform = `translateX(${offsetAtDragStart}px)`;
+            document.body.style.userSelect = 'none';
             if (outer) outer.style.cursor = 'grabbing';
         }
 
-        function onDragMove(clientX) {
+        function moveDrag(clientX) {
             if (!isDragging) return;
-            const halfWidth = getHalfWidth();
-            let next = currentOffset + (clientX - startX);
-            next = ((next % halfWidth) - halfWidth) % (-halfWidth);
-            if (next > 0) next -= halfWidth;
-            newsTrack.style.transform = `translateX(${next}px)`;
+            const delta = clientX - dragStartX;
+            newsTrack.style.transform = `translateX(${offsetAtDragStart + delta}px)`;
         }
 
-        function onDragEnd(clientX) {
+        function endDrag(clientX) {
             if (!isDragging) return;
             isDragging = false;
-            const halfWidth = getHalfWidth();
-            currentOffset = currentOffset + (clientX - startX);
-            currentOffset = ((currentOffset % halfWidth) - halfWidth) % (-halfWidth);
-            if (currentOffset > 0) currentOffset -= halfWidth;
+            document.body.style.userSelect = '';
             if (outer) outer.style.cursor = 'grab';
-            resumeTimer = setTimeout(resumeCarousel, 2000);
+
+            // Normalize offset into [-halfWidth, 0] range before resuming
+            const halfWidth = newsTrack.scrollWidth / 2;
+            let finalOffset = offsetAtDragStart + (clientX - dragStartX);
+            finalOffset = finalOffset % halfWidth;
+            if (finalOffset > 0) finalOffset -= halfWidth;
+            newsTrack.style.transform = `translateX(${finalOffset}px)`;
+
+            resumeTimer = setTimeout(() => {
+                const progress = Math.abs(finalOffset) / halfWidth;
+                const delay = -(progress * 52);
+                newsTrack.style.transform = '';
+                newsTrack.style.animation = `newsScroll 52s ${delay}s linear infinite`;
+            }, 2000);
         }
 
         // Mouse
-        newsTrack.addEventListener('mousedown', e => { e.preventDefault(); onDragStart(e.clientX); });
-        window.addEventListener('mousemove', e => { if (isDragging) onDragMove(e.clientX); });
-        window.addEventListener('mouseup', e => { if (isDragging) onDragEnd(e.clientX); });
+        newsTrack.addEventListener('mousedown', e => {
+            e.preventDefault();
+            startDrag(e.clientX);
+        });
+        window.addEventListener('mousemove', e => moveDrag(e.clientX));
+        window.addEventListener('mouseup',   e => endDrag(e.clientX));
 
         // Touch
-        newsTrack.addEventListener('touchstart', e => { onDragStart(e.touches[0].clientX); }, { passive: true });
-        newsTrack.addEventListener('touchmove', e => { onDragMove(e.touches[0].clientX); }, { passive: true });
-        newsTrack.addEventListener('touchend', e => { onDragEnd(e.changedTouches[0].clientX); }, { passive: true });
+        newsTrack.addEventListener('touchstart', e => startDrag(e.touches[0].clientX),          { passive: true });
+        newsTrack.addEventListener('touchmove',  e => moveDrag(e.touches[0].clientX),            { passive: true });
+        newsTrack.addEventListener('touchend',   e => endDrag(e.changedTouches[0].clientX),      { passive: true });
 
         if (outer) outer.style.cursor = 'grab';
     }
