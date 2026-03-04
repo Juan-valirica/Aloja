@@ -86,16 +86,19 @@
             .block-content,
             .manifesto-block,
             .brand-card,
-            .brand-logo,
             .brand-cta,
             .founder-card {
                 opacity: 1 !important;
                 transform: none !important;
                 visibility: visible !important;
             }
-            .brand-logo {
-                -webkit-mask-image: none !important;
-                mask-image: none !important;
+            .brand-logo--default {
+                opacity: 1 !important;
+                transform: none !important;
+                filter: brightness(0) invert(1) !important;
+            }
+            .brand-logo-hover-overlay {
+                display: none !important;
             }
             .divider-line {
                 transform: scaleX(1) !important;
@@ -197,8 +200,14 @@
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-agency.png"
                              alt="Aloja Agency"
-                             class="brand-logo"
+                             class="brand-logo brand-logo--default"
                              loading="lazy" />
+                        <div class="brand-logo-hover-overlay" aria-hidden="true">
+                            <img src="assets/img/logo-aloja-agency.png"
+                                 alt=""
+                                 class="brand-logo"
+                                 loading="lazy" />
+                        </div>
                     </div>
 
                     <div class="brand-cta">
@@ -237,8 +246,14 @@
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-experience.png"
                              alt="Aloja Experience"
-                             class="brand-logo"
+                             class="brand-logo brand-logo--default"
                              loading="lazy" />
+                        <div class="brand-logo-hover-overlay" aria-hidden="true">
+                            <img src="assets/img/logo-aloja-experience.png"
+                                 alt=""
+                                 class="brand-logo"
+                                 loading="lazy" />
+                        </div>
                     </div>
 
                     <div class="brand-cta">

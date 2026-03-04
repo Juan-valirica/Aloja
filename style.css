@@ -585,15 +585,14 @@ html.js-ready .divider-line.visible {
     height: 100%;
     padding: 56px 48px;
 
-    background: #ffffff;
+    background: #000000;
     border-radius: 24px;
 
-    /* separación del fondo */
     box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.08),
-        0 4px 12px rgba(0, 0, 0, 0.04);
+        0 20px 40px rgba(0, 0, 0, 0.22),
+        0 4px 12px rgba(0, 0, 0, 0.14);
 
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
     display: flex;
     flex-direction: column;
@@ -611,10 +610,10 @@ html.js-ready .divider-line.visible {
     transform: translateY(-10px) scale(1.01);
 
     box-shadow:
-        0 40px 80px rgba(0, 0, 0, 0.12),
-        0 10px 30px rgba(0, 0, 0, 0.08);
+        0 40px 80px rgba(0, 0, 0, 0.32),
+        0 10px 30px rgba(0, 0, 0, 0.20);
 
-    border-color: rgba(0, 0, 0, 0.18);
+    border-color: rgba(255, 255, 255, 0.22);
 }
 
 .brand-surface::before {
@@ -624,7 +623,7 @@ html.js-ready .divider-line.visible {
     border-radius: inherit;
     background: radial-gradient(
         120% 120% at 50% 0%,
-        rgba(0, 0, 0, 0.06),
+        rgba(255, 255, 255, 0.07),
         transparent 60%
     );
     opacity: 0;
@@ -670,7 +669,7 @@ html.js-ready .brand-card.visible {
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: #000000;
+    color: #ffffff;
 }
 
 /* ===============================
@@ -693,87 +692,119 @@ html.js-ready .brand-card.visible {
 }
 
 /* ===============================
-   LOGO WRAPPER (STABILITY)
+   LOGO WRAPPER
    =============================== */
 
 .brand-logo-wrap {
+    position: relative;
     overflow: hidden;
     display: inline-block;
 }
 
 /* ===============================
-   LOGO – VECTOR ASSEMBLY REVEAL
+   BRAND LOGO – BASE
    =============================== */
 
 .brand-logo {
     max-width: min(500px, 100%);
     height: auto;
-
-    opacity: 0;
-    will-change: transform, opacity;
-
-    /* Mask sweep (solo durante entrada) */
-    -webkit-mask-image: linear-gradient(
-        90deg,
-        transparent 0%,
-        black 35%,
-        black 65%,
-        transparent 100%
-    );
-    -webkit-mask-size: 200% 100%;
-    -webkit-mask-position: 100% 0;
-
-    mask-image: linear-gradient(
-        90deg,
-        transparent 0%,
-        black 35%,
-        black 65%,
-        transparent 100%
-    );
-    mask-size: 200% 100%;
-    mask-position: 100% 0;
-
+    filter: brightness(0) invert(1);
     backface-visibility: hidden;
-    transform: translateZ(0);
+    display: block;
 }
 
-/* Estado visible → anima TODO */
-html.js-ready .brand-card.visible .brand-logo {
+/* ===============================
+   LOGO DEFAULT – CINEMATIC CURTAIN RISE
+   =============================== */
+
+.brand-logo--default {
+    /* Before entry: hidden below overflow clip */
+    opacity: 0;
+    transform: translateY(110%);
+    /* Glow that materialises with the rising logo */
+    filter: brightness(0) invert(1) drop-shadow(0 0 32px rgba(255, 255, 255, 0.75));
+    will-change: transform, opacity, filter;
+    transition:
+        opacity   0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+        filter    0.6s ease;
+}
+
+/* Agency: curtain rises at 0.3 s after card appears */
+html.js-ready .brand-card[data-brand="agency"].visible .brand-logo--default {
     opacity: 1;
-
-    -webkit-mask-position: 0% 0;
-    mask-position: 0% 0;
-
-    animation: logoOvershoot 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-
-    /* elimina velo blanco */
-    -webkit-mask-image: none;
-    mask-image: none;
+    transform: translateY(0);
+    filter: brightness(0) invert(1);
+    transition:
+        opacity   0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.30s,
+        transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.30s,
+        filter    0.7s ease                           1.15s;
 }
 
-/* Animación real (no fade genérico) */
-@keyframes logoOvershoot {
-    0% {
-        transform: translateY(28px);
-        opacity: 0;
-    }
-    60% {
-        transform: translateY(-4px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+/* Experience: curtain rises 150 ms later for natural stagger */
+html.js-ready .brand-card[data-brand="experience"].visible .brand-logo--default {
+    opacity: 1;
+    transform: translateY(0);
+    filter: brightness(0) invert(1);
+    transition:
+        opacity   0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.45s,
+        transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s,
+        filter    0.7s ease                           1.30s;
 }
 
-/* Diferenciación sutil entre marcas */
-.brand-card[data-brand="experience"] .brand-logo {
-    animation-delay: 0.05s;
+/* Hover-out: default logo drops away fast */
+html.js-ready .brand-card.visible:hover .brand-logo--default,
+html.js-ready .brand-card.visible:focus-within .brand-logo--default {
+    opacity: 0;
+    transform: translateY(7px);
+    filter: brightness(0) invert(1);
+    transition:
+        opacity   0.13s ease-in 0s,
+        transform 0.13s ease-in 0s,
+        filter    0s            0s;
 }
 
-.brand-card[data-brand="agency"] .brand-logo {
-    animation-delay: 0.15s;
+/* ===============================
+   LOGO HOVER OVERLAY – ICON POSITION SHIFT
+   =============================== */
+
+.brand-logo-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Sits 6px higher than default → simulates icon shifting upward */
+    transform: translateY(-6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.13s ease-out;
+}
+
+.brand-logo-hover-overlay .brand-logo {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hover-in: overlay snaps into view at its elevated position */
+.brand-card:hover .brand-logo-hover-overlay,
+.brand-card:focus-within .brand-logo-hover-overlay {
+    opacity: 1;
+    transition: opacity 0.14s ease-out 0.07s;
+}
+
+/* ===============================
+   SAFETY FALLBACK (NO-JS)
+   =============================== */
+
+html:not(.js-ready) .brand-logo--default {
+    opacity: 1;
+    transform: none;
+    filter: brightness(0) invert(1);
+}
+
+html:not(.js-ready) .brand-logo-hover-overlay {
+    display: none;
 }
 
 /* ===============================
@@ -800,7 +831,7 @@ html.js-ready .brand-card.visible .brand-cta {
     align-items: center;
     gap: 10px;
     padding: 14px 28px;
-    border: 1px solid #000000;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     position: relative;
     overflow: hidden;
 }
@@ -809,7 +840,7 @@ html.js-ready .brand-card.visible .brand-cta {
     content: '';
     position: absolute;
     inset: 0;
-    background: #000000;
+    background: #ffffff;
     transform: translateX(-101%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -825,21 +856,22 @@ html.js-ready .brand-card.visible .brand-cta {
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #000000;
+    color: #ffffff;
 }
 
 .brand-link:hover .cta-text {
-    color: #ffffff;
+    color: #000000;
 }
 
 .cta-arrow {
     position: relative;
     z-index: 1;
+    stroke: #ffffff;
     transition: transform 0.4s ease;
 }
 
 .brand-link:hover .cta-arrow {
-    stroke: #ffffff;
+    stroke: #000000;
     transform: translate(3px, -3px);
 }
 
@@ -853,7 +885,7 @@ html.js-ready .brand-card.visible .brand-cta {
     background: linear-gradient(
         to bottom,
         transparent,
-        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.25),
         transparent
     );
 }
@@ -871,11 +903,14 @@ html.js-ready .divider-vertical.visible {
    SAFETY FALLBACK (ANTI-BUG)
    =============================== */
 
-html:not(.js-ready) .brand-logo {
+html:not(.js-ready) .brand-logo--default {
     opacity: 1;
-    -webkit-mask-image: none;
-    mask-image: none;
     transform: none;
+    filter: brightness(0) invert(1);
+}
+
+html:not(.js-ready) .brand-logo-hover-overlay {
+    display: none;
 }
 
 
@@ -1320,8 +1355,8 @@ html.js-ready .founder-card.visible {
         padding: 32px 28px;
     }
     
-    .brand-logo {
-        max-width: 520px;   /* +30% real */
+    .brand-logo--default {
+        max-width: 520px;
         max-height: 130px;
     }
 
@@ -1454,7 +1489,7 @@ html.js-ready .founder-card.visible {
         padding: 24px 20px;
     }
 
-    .brand-logo {
+    .brand-logo--default {
         max-width: 280px;
     }
 
@@ -1632,7 +1667,7 @@ html.js-ready .founder-card.visible {
         padding: 20px 16px;
     }
 
-    .brand-logo {
+    .brand-logo--default {
         max-width: 220px;
     }
 
