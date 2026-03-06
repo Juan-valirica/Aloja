@@ -883,6 +883,71 @@ html.js-ready .divider-vertical.visible {
 }
 
 /* ===============================
+   ALOJA EXPERIENCE – CARD INVERTIDA
+   (fondo blanco, textos negros)
+   =============================== */
+
+/* Superficie */
+.brand-card[data-brand="experience"] .brand-surface {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.10),
+        0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.brand-card[data-brand="experience"]:hover .brand-surface,
+.brand-card[data-brand="experience"]:focus-within .brand-surface {
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.16),
+        0 10px 30px rgba(0, 0, 0, 0.10);
+    border-color: rgba(0, 0, 0, 0.22);
+}
+
+/* Radial overlay en hover */
+.brand-card[data-brand="experience"] .brand-surface::before {
+    background: radial-gradient(
+        120% 120% at 50% 0%,
+        rgba(0, 0, 0, 0.04),
+        transparent 60%
+    );
+}
+
+/* Claim */
+.brand-card[data-brand="experience"] .brand-claim {
+    color: #000000;
+}
+
+/* CTA borde */
+.brand-card[data-brand="experience"] .brand-cta {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+/* CTA fill hover → negro */
+.brand-card[data-brand="experience"] .brand-cta::before {
+    background: #000000;
+}
+
+/* CTA texto: negro en reposo, blanco en hover */
+.brand-card[data-brand="experience"] .cta-text {
+    color: #000000;
+}
+
+.brand-card[data-brand="experience"] .brand-link:hover .cta-text {
+    color: #ffffff;
+}
+
+/* Flecha: negra en reposo, blanca en hover */
+.brand-card[data-brand="experience"] .cta-arrow {
+    stroke: #000000;
+}
+
+.brand-card[data-brand="experience"] .brand-link:hover .cta-arrow {
+    stroke: #ffffff;
+}
+
+
+/* ===============================
    SAFETY FALLBACK (ANTI-BUG)
    =============================== */
 
