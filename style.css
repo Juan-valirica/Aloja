@@ -1861,3 +1861,333 @@ html:not(.js-ready) .manifesto-text {
     white-space: nowrap;
     border: 0;
 }
+
+/* =====================================================
+   LEGAL PAGES – TÉRMINOS / PRIVACIDAD
+   ===================================================== */
+
+/* Body override for legal pages */
+body.legal-page {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* ── Header ── */
+.legal-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.legal-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 72px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.legal-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.legal-logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    filter: invert(1);
+}
+
+.legal-back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.legal-back-link:hover {
+    color: #ffffff;
+}
+
+/* ── Hero ── */
+.legal-hero {
+    background: #000000;
+    padding: 80px 60px 72px;
+}
+
+.legal-hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.legal-tag {
+    display: inline-block;
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 20px;
+}
+
+.legal-page-title {
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.legal-page-subtitle {
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 300;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* Divider line override for dark hero context */
+.legal-hero + .section-divider .divider-line {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Main Content ── */
+.legal-main {
+    background: #ffffff;
+}
+
+.legal-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 72px 60px 120px;
+}
+
+.legal-intro {
+    margin-bottom: 8px;
+}
+
+.legal-intro p {
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 450;
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.65);
+    margin-bottom: 16px;
+}
+
+/* ── Sections ── */
+.legal-section {
+    padding: 48px 0 8px;
+}
+
+.legal-section-title {
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.legal-subsection-title {
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    color: #000000;
+    margin-top: 32px;
+    margin-bottom: 12px;
+    letter-spacing: 0;
+}
+
+.legal-text p {
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.72);
+    margin-bottom: 16px;
+}
+
+.legal-text p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 20px 0;
+}
+
+.legal-text ul li {
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.72);
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.legal-text ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.68em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #000000;
+    opacity: 0.25;
+}
+
+.legal-text a {
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(0, 0, 0, 0.3);
+    transition: text-decoration-color 0.2s ease;
+}
+
+.legal-text a:hover {
+    text-decoration-color: #000000;
+}
+
+/* ── Section Divider (thin separator between sections) ── */
+.legal-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+    margin: 8px 0 0;
+}
+
+/* ── Footer Legal Links ── */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 24px 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-legal-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-legal-link {
+    font-family: 'Nutmeg', sans-serif;
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-legal-link:hover {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-legal-sep {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.72rem;
+}
+
+/* ── Legal Page Footer Override ──
+   On legal pages the footer has no parallax transition overlay */
+body.legal-page .footer-transition {
+    display: none;
+}
+
+body.legal-page .site-footer {
+    margin-top: 0;
+}
+
+/* ── Responsive: Legal Pages ── */
+@media (max-width: 1024px) {
+    .legal-header-inner {
+        padding: 0 40px;
+    }
+
+    .legal-hero {
+        padding: 64px 40px 56px;
+    }
+
+    .legal-content {
+        padding: 60px 40px 96px;
+    }
+
+    .footer-bottom {
+        padding: 24px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .legal-header-inner {
+        padding: 0 24px;
+        height: 64px;
+    }
+
+    .legal-logo {
+        width: 100px;
+    }
+
+    .legal-back-link span {
+        display: none;
+    }
+
+    .legal-hero {
+        padding: 48px 24px 44px;
+    }
+
+    .legal-content {
+        padding: 48px 24px 80px;
+    }
+
+    .legal-section {
+        padding: 36px 0 8px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 20px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-hero {
+        padding: 40px 20px 36px;
+    }
+
+    .legal-content {
+        padding: 40px 20px 64px;
+    }
+
+    .legal-header-inner {
+        padding: 0 20px;
+    }
+
+    .footer-bottom {
+        padding: 20px 20px;
+    }
+}

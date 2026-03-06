@@ -571,6 +571,11 @@
 
     <div class="footer-bottom">
         <span class="footer-copyright">&copy; 2026 Aloja Group. Todos los derechos reservados.</span>
+        <nav class="footer-legal-nav" aria-label="Páginas legales">
+            <a href="/terminos" class="footer-legal-link">Términos y condiciones</a>
+            <span class="footer-legal-sep" aria-hidden="true">·</span>
+            <a href="/privacidad" class="footer-legal-link">Política de privacidad</a>
+        </nav>
     </div>
 
 </footer>
