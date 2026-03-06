@@ -164,7 +164,7 @@
 
     <div class="headline-container">
         <h1 class="main-headline">
-            <span class="headline-line">Aloja Group es un grupo de marketing especializado en activaciones BTL, marketing experiencial y estrategia digital.</span>
+            <span class="headline-line">Aloja Group es un grupo de marketing especializado en estrategias de marketing 360º que integran BTL, marketing experiencial y digital para crear conexiones reales entre marcas y personas.</span>
         </h1>
     </div>
 
@@ -195,7 +195,7 @@
                    rel="noopener noreferrer"
                    class="brand-link">
 
-                    <h2 class="brand-claim">Diseñamos y ejecutamos<br>estrategias</h2>
+                    <h2 class="brand-claim">Diseñamos y ejecutamos<br>estrategias en</h2>
 
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-agency.png"
@@ -241,7 +241,7 @@
                    rel="noopener noreferrer"
                    class="brand-link">
 
-                    <h2 class="brand-claim">Te ponemos<br>en tu sitio.</h2>
+                    <h2 class="brand-claim">Te ponemos<br>en tu sitio en</h2>
 
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-experience.png"
