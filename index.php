@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aloja Group | Marketing Estratégico, BTL y Experiencial en Madrid</title>
-    <meta name="description" content="Aloja Group es un grupo de marketing especializado en activaciones BTL, marketing experiencial y estrategia digital. Conectamos marcas con personas en Madrid y toda España.">
+    <title>Aloja Group | Marketing BTL y Experiencial en Madrid</title>
+    <meta name="description" content="Grupo de marketing en Madrid especializado en BTL, experiencial y estrategia digital. Conectamos marcas con personas de forma relevante y sostenida.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://alojagroup.com/">
 
@@ -31,6 +31,7 @@
     <meta name="msapplication-TileColor" content="#000000">
     <link rel="icon" type="image/svg+xml" href="assets/svg/logo-mask.svg">
     <link rel="apple-touch-icon" href="assets/svg/logo-mask.svg">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
     <!-- Preload critical assets -->
     <link rel="preload" href="assets/fonts/Nutmeg-Regular.ttf" as="font" type="font/ttf" crossorigin>
@@ -194,7 +195,7 @@
                    rel="noopener noreferrer"
                    class="brand-link">
 
-                    <span class="brand-claim">Diseñamos y ejecutamos<br>estrategias en</span>
+                    <h2 class="brand-claim">Diseñamos y ejecutamos<br>estrategias</h2>
 
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-agency.png"
@@ -240,7 +241,7 @@
                    rel="noopener noreferrer"
                    class="brand-link">
 
-                    <span class="brand-claim">Te ponemos<br>en tu sitio en</span>
+                    <h2 class="brand-claim">Te ponemos<br>en tu sitio.</h2>
 
                     <div class="brand-logo-wrap">
                         <img src="assets/img/logo-aloja-experience.png"
@@ -293,6 +294,7 @@
 
         <!-- Block 01 -->
         <div class="manifesto-block" data-number="01">
+        <h2 class="sr-only">Nuestra filosofía</h2>
 
 
 <div class="block-content">
@@ -332,7 +334,7 @@
 <section class="news-section" id="news" aria-label="Aloja News">
 
     <div class="news-header">
-        <span class="news-section-label">En los medios</span>
+        <h3 class="news-section-label">En los medios</h3>
         <h2 class="news-title">Aloja News</h2>
     </div>
 
@@ -576,7 +578,7 @@
 <!-- =====================================================
      SCRIPTS
 ===================================================== -->
-<script src="main.js"></script>
+<script src="main.js" defer></script>
 
 </body>
 </html>
