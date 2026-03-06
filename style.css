@@ -755,6 +755,13 @@ html.js-ready .brand-card.visible .brand-logo-wrap:hover .brand-logo--default {
    LOGO HOVER OVERLAY – ICON POSITION SHIFT
    =============================== */
 
+/* 2-frame GIF loop: overlay cycles in and out */
+@keyframes brandGifLoop {
+    0%,  20% { opacity: 0; }
+    35%, 65% { opacity: 1; }
+    80%, 100% { opacity: 0; }
+}
+
 .brand-logo-hover-overlay {
     position: absolute;
     top: 0;
@@ -771,8 +778,14 @@ html.js-ready .brand-card.visible .brand-logo-wrap:hover .brand-logo--default {
     height: auto;
 }
 
-/* Hover-in: overlay appears only when hovering the logo area */
+/* GIF loop starts after entry transition completes (~1.5s) */
+html.js-ready .brand-card.visible .brand-logo-hover-overlay {
+    animation: brandGifLoop 3s ease-in-out 1.5s infinite;
+}
+
+/* On hover: kill the loop → transition takes over, shows overlay static */
 html.js-ready .brand-card.visible .brand-logo-wrap:hover .brand-logo-hover-overlay {
+    animation: none;
     opacity: 1;
     transition: opacity 0.14s ease-out 0.07s;
 }
